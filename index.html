@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Me Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    
+
+  </head>
+  <body>
+    
+    
+        <h1 class="heading">
+          <span class="word">CONTACT</span>
+          <span class="word"> ME</span>
+        </h1>
+        <div class="container">
+          <form method="post">      
+            <label for="fname"> Name</label>
+            <input type="text" id="name" name="firstname" placeholder="Type your name here">
+        
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Type your email address here">
+
+            <label for="Message">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Leave your comment here" style="height:100px"></textarea>
+        
+            <input type="button" id="btn" value="Send">
+          </form>
+        </div>
+
+        
+
+
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    
+<script>
+var btn=document.getElementById('btn');
+btn.addEventListener('click',function(e){
+    e.preventDefault();
+     console.log('hi');
+     var name=document.getElementById('name').value;
+     var email=document.getElementById('email').value;
+     var message=document.getElementById('subject').value;
+     var body = 'Name: ' + name + '<br/> Email: '+ email + '<br/> Message: ' + message ;
+     Email.send({
+        SecureToken : "3819aad1-05c1-4d90-8073-32ae8218a949",
+        To : 'juianabhinandan@gmail.com',
+        From : "roy635016@gmail.com",
+        Subject : "Contact Me",
+        Body : body
+     }).then(
+      message => alert(message)
+     );
+
+})
+</script>
+<script src="script.js"></script>
+  </body>
+</html>
